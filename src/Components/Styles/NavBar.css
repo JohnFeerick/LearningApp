@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: rgb(237, 49, 49);
+}
+
+.navbar a,
+.navbar label{
+    text-decoration: inherit;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(99, 97, 97);
+    margin: 5px;
+}
+

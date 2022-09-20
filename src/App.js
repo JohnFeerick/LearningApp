@@ -1,57 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
+import Home from './Components/Home';
+import Courses from './Components/Courses';
+import Objects from './Components/Objects';
+import Inheritance from './Components/Inheritance';
+import Abstraction from './Components/Abstraction';
+import Polymorphism from './Components/Polymorphism';
+import Encapsulation from './Components/Encapsulation';
+import Register from './Components/Register';
+import Editor from './Components/Editor';
+import Login from './Components/Login';
 import './App.css';
+import NavBar from './Components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <div className='container'>
+          <div className='row'>
+            <NavBar />
+            <Routes>
+              <Route exact path='/' element={<Home />}/>
+              <Route path='/courses' element={<Courses/>}/>
+              <Route path='/objects' element={<Objects/>}/>
+              <Route path='/inheritance' element={<Inheritance/>}/>
+              <Route path='/abstraction' element={<Abstraction/>}/>
+              <Route path='/polymorphism' element={<Polymorphism/>}/>
+              <Route path='/encapsulation' element={<Encapsulation/>}/>
+              <Route path='/editor' element={<Editor/>}/>
+              <Route path='/register' element={<Register/>}/>
+              <Route path='/login' element={<Login/>}/>
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </Router>
+    
   );
 }
 
